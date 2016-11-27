@@ -1,0 +1,32 @@
+{
+  "description": "Locust Test Application",
+  "id": "dcos.locust",
+  "labels": {
+    "location": "olympus",
+    "owner": "zeus"
+  },
+  "run": {
+    "artifacts": [
+    ],
+    "cmd": "/usr/local/bin/dcos-tests --debug --term-wait 20 --http-addr :8095",
+    "cpus": 0.50,
+    "mem": 32,
+    "disk": 128,
+    "docker": {
+      "image": "f4tq/dcos-tests:v0.31"
+    },
+    "env": {
+      "MON": "test",
+      "CONNECT": "direct"
+    },
+    "maxLaunchDelay": 3600,
+    "restart": {
+      "activeDeadlineSeconds": 120,
+      "policy": "NEVER"
+    },
+    "user": "root",
+    "volumes": [
+    ]
+  }
+}
+
